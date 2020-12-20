@@ -1,3 +1,4 @@
+package com.alafita.gradlesample;
 
 public class Hello {
   
