@@ -6,5 +6,6 @@ public class SimpleTest {
     @Test
     public void tester(){
         Assertions.assertTrue(true);
+
     }
 }
