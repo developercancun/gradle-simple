@@ -3,6 +3,16 @@
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
 version: 2.1
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.2
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: sonarcloud
+
 jobs:
   build:
     docker:
@@ -41,3 +51,5 @@ jobs:
 
       # run tests!
       - run: gradle test
+
+      - sonarcloud/scan
