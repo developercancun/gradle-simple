@@ -10,7 +10,7 @@ apply plugin: 'maven'
 mainClassName = 'com.alafita.gradlesample.Hello'
 
 
-group = 'com.github.jitpack'
+group = 'com.alafita.gradlesample'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
