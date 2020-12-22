@@ -2,16 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2.1
-
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.2
-
-workflows:
-  main:
-    jobs:
-      - build:
-          context: sonarcloud
+version: 2
 
 jobs:
   build:
@@ -50,6 +41,8 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradle test
+      - run: ./gradlew clean build sonarqube \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=ced89d3d215bddcd5472d9b012ec6e98b2d47a5a
 
-      - sonarcloud/scan
+
