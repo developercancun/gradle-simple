@@ -90,10 +90,6 @@ jacocoTestReport {
     }
 }
 
-// build.gradle
-plugins {
-    id "org.sonarqube" version "3.0"
-}
 
 sonarqube {
     properties {
