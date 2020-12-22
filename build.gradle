@@ -89,3 +89,9 @@ jacocoTestReport {
     }
 }
 
+// build.gradle
+sonarqube {
+    properties {
+        properties["sonar.organization"] = "none"
+    }
+}
