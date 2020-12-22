@@ -88,3 +88,13 @@ jacocoTestReport {
         html.destination file("${buildDir}/jacocoHtml")
     }
 }
+
+// build.gradle
+sonarqube {
+    properties {
+        properties["sonar.sources"] += sourceSets.custom.allSource.srcDirs
+        properties["sonar.tests"] += sourceSets.integTest.allSource.srcDirs
+        properties["sonar.projectKey"] = "com.alafita.gradlesample:gradle-simple"
+        properties["sonar.organization"] = "none"
+    }
+}
